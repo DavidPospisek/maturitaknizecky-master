@@ -1,4 +1,4 @@
- <head>
+<head>
     <title>Knížky potřebné k Maturitě</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,14 +19,16 @@
     </ul>
       <form action="<?php echo base_url("auth/login"); ?>">
             <button type="submit">Přihlásit se</button>
-            
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+    
+    
+    </ul>
+      <form action="<?php echo base_url("auth/logout"); ?>">
+            <button type="submit">Odhlásit se</button>
       </form>
-      <form action="<?php echo base_url("auth/create_user"); ?>">
-            <button type="submit">Zaregistrovat se</button>
   </div>
 </nav>
-    </body>                
- </div>
- </div>
- </nav> 
- <br>
+    </body>
+</html>

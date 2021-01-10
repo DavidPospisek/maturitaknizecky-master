@@ -125,7 +125,7 @@ class Auth extends CI_Controller
 		$this->ion_auth->logout();
 
 		// redirect them to the login page
-		redirect('pages/home', 'refresh');
+		redirect('stranka/1', 'refresh');
 	}
 
 	/**
@@ -894,7 +894,7 @@ class Auth extends CI_Controller
             if($this->ion_auth->logged_in()){
                 $this->load->model('kniha_model');
 				$data['polozky'] = $this->kniha_model->get_menu_kategorie();
-                $this->load->view('layout/hlavicka', $data);                
+                $this->load->view('layout/hlavickaform', $data);                
 		$this->load->view('content/formular', $data);  
 		$this->load->view('layout/paticka');
         }
