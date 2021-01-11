@@ -1,101 +1,61 @@
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Přihlášení</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <!-- Le styles -->
-    <link href="<?php echo base_url('css/bootstrap.css')?>" rel="stylesheet">
-    <style type="text/css">
-      /* Override some defaults */
-      html, body {
-        background-color: #FF5733;
-      }
-      body {
-        padding-top: 60px; 
-      }
-      .container {
-        width: 1892px;
-      }
-
-      /* The white background content wrapper */
-      .container > .content {
-        background-color: #336EFF ;
-        padding: 40px;
-        margin: 20 -20px; 
-        -webkit-border-radius: 10px 10px 10px 10px;
-           -moz-border-radius: 10px 10px 10px 10px;
-                border-radius: 10px 10px 10px 10px;
-        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-                box-shadow: 0 1px 2px rgba(0,0,0,.15);
-      }
-
-    .login-form {
-    margin-left: 750px;
+<html>
+    <head>
+        <title>Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet/less" type="text/css" href="styles.less">
+        <script src="less.js" type="text/javascript"></script>
+        
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <style>
+    body {
+     text-align: center;
     }
-  
-    legend {
-    margin-right: -1500px;
-    font-weight: bold;
-      color: #404040;
-    }
-
     </style>
-
-</head>
-<body>
-  <div class="container">
-    <div class="content">
-      <div class="row">
-        <div class="login-form">
-<div class="page-header">
-    <h1>Přihlášení</h1>
-  </div>          <?php if($message) { ?> 
-          <div class="alert alert-error">
-  
- 
-</div>
-<?php } ?>
-          <form action="<?php echo base_url('auth/login')?>" method="post" accept-charset="utf-8">
-            
-              <div class="clearfix">
-                <div class="input-prepend">
-                <span class="add-on"><i class="icon-envelope"></i></span>
-              
-                <input type="text" name="identity" value="" id="identity" placeholder="Uživatelské jméno">
-                </div>
-              </div>
-              <div class="clearfix">
-                <div class="input-prepend">
-                <span class="add-on"><i class="icon-lock"></i></span>
-                <input type="password" name="password" placeholder="Heslo">
-                </div>
-              </div>
-              <button class="btn btn-primary" type="submit">Přihlásit se</button>
-              <p><a href="forgot_password">Zapomněli jste heslo?</a></p>
-            
-          </form>
+    </head>
+              <body style="background-color:lightgreen;">
+                <div class="container">
+             <div class="col-lg-4">
         </div>
-      </div>
+<br>
+<div class="col-4-lg-4">
+<div class="card" style="width: 60rem;">
+	<div class="card-header">
+		<h3 align="center"> <th scope="col"><b style="color: blue;">Přihlášení</b></th></h3>
+	</div>
+	<div class="card-body">
+    <?php echo form_open("auth/login");?>
+  <p>
+    <?php echo lang('login_identity_label', 'identity');?>
+    <?php echo form_input($identity);?>
+  </p>         
+  <p>
+    <?php echo lang('login_password_label', 'password');?>
+    <?php echo form_input($password);?>
+  </p>
+  <p>
+    <?php echo lang('login_remember_label', 'remember');?>
+    <?php echo form_checkbox('remember', '1', FALSE, 'id="remember"');?>
+  </p>
+
+
+  <p><input class="btn btn-md text-dark bg-secondary" type="submit" id="login" value="Přihlásit se"</p>
+
+<?php echo form_close();?>
+
+<p><a href="forgot_password"><?php echo lang('login_forgot_password');?></a></p>
+	</div>
+</div>
     </div>
-  </div> <!-- /container -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-
-        <script src="<?php echo base_url('js/vendor/bootstrap.min.js') ?>"></script>
-
-        <script src="<?php echo base_url('js/plugins.js') ?>"></script>
-        <script src="<?php echo base_url('js/main.js') ?>"></script>
-
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
-</body>
-</html>
+    </div>
+       
+        <div class="col-lg-4">
+        </div>
+        <p class="text-align: center"><b style="color: black;">Vytvořeno jako DÚ do WEBU by David Pospíšek</b></p>
+    </body>

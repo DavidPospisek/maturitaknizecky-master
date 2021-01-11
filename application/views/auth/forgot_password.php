@@ -40,14 +40,5 @@
 						</div>
 					</div>
 					<div class="footer">
-						    Copyright &copy; 2021 &mdash; David Pospíšek
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="js/my-login.js"></script>
-</body>
-</html>
+					<p class="text-align: center"><b style="color: black;">Vytvořeno jako DÚ do WEBU by David Pospíšek</b></p>
+			

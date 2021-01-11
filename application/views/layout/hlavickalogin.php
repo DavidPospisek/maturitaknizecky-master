@@ -1,4 +1,4 @@
- <head>
+<head>
     <title>Knížky potřebné k Maturitě</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,21 +11,12 @@
    <div class="container">
         <div class="collapse navbar-collapse" id="navbarResponsive">
            <ul class="navbar-nav ml-auto">
-           
             <?php foreach($polozky as $p): ?>
           <li class="nav-item">
   <a class="nav-link" href="<?php echo base_url("stranka/".$p->idmenu)?>"><?= $p->categorie ?><span class="sr-only">(current)</span></a>
         </li>
     <?php endforeach; ?>
-
-
     </ul>
-      <form action="<?php echo base_url("auth/login"); ?>">
-            <button type="submit">Přihlásit se</button>
-      </form>
-      <form action="<?php echo base_url( "auth/create_user "); ?>" >
-            <button type="submit">Zaregistrovat se</button>
-      </form>
   </div>
 </nav>
     </body>
